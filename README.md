@@ -1,2 +1,1 @@
-# coding-questions
-Coding Questions: C# Sharp Basic Algorithm Exercises
+# Coding Questions: C# Sharp Basic Algorithm Exercises
