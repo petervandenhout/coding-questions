@@ -27,20 +27,24 @@ namespace CodingQuestions
         }
 
         #endregion
-    }
 
-    public class Exercise4Tests
-    {
-        [Theory]
-        [InlineData(103, true)]
-        [InlineData(90, true)]
-        [InlineData(190, true)]
-        [InlineData(89, false)]
-        public void Test(int x, bool expected)
+        #region Tests
+
+        public class Tests
         {
-            var result = Exercise4.Compute(x);
+            [Theory]
+            [InlineData(103, true)]
+            [InlineData(90, true)]
+            [InlineData(190, true)]
+            [InlineData(89, false)]
+            public void Test(int x, bool expected)
+            {
+                var result = Compute(x);
 
-            result.Should().Be(expected);
+                result.Should().Be(expected);
+            }
         }
+
+        #endregion
     }
 }

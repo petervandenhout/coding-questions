@@ -27,20 +27,24 @@ namespace CodingQuestions
         }
 
         #endregion
-    }
 
-    public class Exercise3Tests
-    {
-        [Theory]
-        [InlineData(30, 0, true)]
-        [InlineData(25, 5, true)]
-        [InlineData(20, 30, true)]
-        [InlineData(20, 25, false)]
-        public void Test(int x, int y, bool expected)
+        #region Tests
+
+        public class Tests
         {
-            var result = Exercise3.Compute(x, y);
+            [Theory]
+            [InlineData(30, 0, true)]
+            [InlineData(25, 5, true)]
+            [InlineData(20, 30, true)]
+            [InlineData(20, 25, false)]
+            public void Test(int x, int y, bool expected)
+            {
+                var result = Compute(x, y);
 
-            result.Should().Be(expected);
+                result.Should().Be(expected);
+            }
         }
+
+        #endregion
     }
 }

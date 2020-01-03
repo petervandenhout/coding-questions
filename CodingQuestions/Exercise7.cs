@@ -5,10 +5,10 @@ using Xunit;
 namespace CodingQuestions
 {
     /// <summary>
-    /// Create a new string where 'if' is added to the front of a given string. If the string already begins with 'if', return the string unchanged.
-    /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-5.php
+    /// Exchange the first and last characters in a given string and return the new string.
+    /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-7.php
     /// </summary>
-    public static class Exercise5
+    public static class Exercise7
     {
         public static string Compute(string str)
         {
@@ -22,7 +22,7 @@ namespace CodingQuestions
 
         private static string Solution(string str)
         {
-            return str.StartsWith("if", StringComparison.InvariantCultureIgnoreCase) ? str : $"if {str}";
+            return str.Length > 1 ? $"{str[str.Length-1]}{str.Substring(1, str.Length-2)}{str[0]}" : str;
         }
 
         #endregion
@@ -32,8 +32,10 @@ namespace CodingQuestions
         public class Tests
         {
             [Theory]
-            [InlineData("if else", "if else")]
-            [InlineData("else", "if else")]
+            [InlineData("abcd", "dbca")]
+            [InlineData("a", "a")]
+            [InlineData("xy", "yx")]
+            [InlineData("abc", "cba")]
             public void Test(string str, string expected)
             {
                 var result = Compute(str);

@@ -26,19 +26,23 @@ namespace CodingQuestions
         }
 
         #endregion
-    }
 
-    public class Exercise1Tests
-    {
-        [Theory]
-        [InlineData(1, 2, 3)]
-        [InlineData(3, 2, 5)]
-        [InlineData(2, 2, 12)]
-        public void Test(int x, int y, int expected)
+        #region Tests
+
+        public class Tests
         {
-            var result = Exercise1.Compute(x, y);
+            [Theory]
+            [InlineData(1, 2, 3)]
+            [InlineData(3, 2, 5)]
+            [InlineData(2, 2, 12)]
+            public void Test(int x, int y, int expected)
+            {
+                var result = Compute(x, y);
 
-            result.Should().Be(expected);
+                result.Should().Be(expected);
+            }
         }
+
+        #endregion
     }
 }

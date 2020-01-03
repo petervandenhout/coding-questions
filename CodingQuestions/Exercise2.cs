@@ -27,19 +27,23 @@ namespace CodingQuestions
         }
 
         #endregion
-    }
 
-    public class Exercise2Tests
-    {
-        [Theory]
-        [InlineData(53, 6)]
-        [InlineData(30, 21)]
-        [InlineData(51, 0)]
-        public void Test(int n, int expected)
+        #region Tests
+
+        public class Tests
         {
-            var result = Exercise2.Compute(n);
+            [Theory]
+            [InlineData(53, 6)]
+            [InlineData(30, 21)]
+            [InlineData(51, 0)]
+            public void Test(int n, int expected)
+            {
+                var result = Compute(n);
 
-            result.Should().Be(expected);
+                result.Should().Be(expected);
+            }
         }
+
+        #endregion
     }
 }
