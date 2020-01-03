@@ -1,16 +1,18 @@
 using FluentAssertions;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace CodingQuestions
 {
+
     /// <summary>
-    /// Get the absolute difference between n and 51. If n is greater than 51 return triple the absolute difference.
-    /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-2.php
+    /// Check if a given positive number is a multiple of 3 or a multiple of 7.
+    /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-10.php
     /// </summary>
-    public static class Exercise2
+    public static class Exercise010
     {
-        public static int Compute(int n)
+        public static bool Compute(int n)
         {
             if (Constants.TestSolutions)
                 return Solution(n);
@@ -20,10 +22,9 @@ namespace CodingQuestions
 
         #region Solution
 
-        private static int Solution(int n)
+        private static bool Solution(int n)
         {
-            const int x = 51;
-            return n > x ? (n - x) * 3 : x - n;
+            return n % 3 == 0 || n % 7 == 0;
         }
 
         #endregion
@@ -33,10 +34,11 @@ namespace CodingQuestions
         public class Tests
         {
             [Theory]
-            [InlineData(53, 6)]
-            [InlineData(30, 21)]
-            [InlineData(51, 0)]
-            public void Test(int n, int expected)
+            [InlineData(3, true)]
+            [InlineData(14, true)]
+            [InlineData(12, true)]
+            [InlineData(37, false)]
+            public void Test(int n, bool expected)
             {
                 var result = Compute(n);
 

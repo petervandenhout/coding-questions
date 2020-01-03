@@ -8,7 +8,7 @@ namespace CodingQuestions
     /// Check a given integer and return true if it is within 10 of 100 or 200
     /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-4.php
     /// </summary>
-    public static class Exercise4
+    public static class Exercise004
     {
         public static bool Compute(int x)
         {

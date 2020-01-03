@@ -8,7 +8,7 @@ namespace CodingQuestions
     /// Compute the sum of the two given integer values. If the two values are the same, then return triple their sum.
     /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-1.php
     /// </summary>
-    public static class Exercise1
+    public static class Exercise001
     {
         public static int Compute(int x, int y)
         {

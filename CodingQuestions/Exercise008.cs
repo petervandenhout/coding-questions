@@ -1,14 +1,15 @@
 using FluentAssertions;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace CodingQuestions
 {
     /// <summary>
-    /// Exchange the first and last characters in a given string and return the new string.
-    /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-7.php
+    /// Create a new string which is 4 copies of the 2 front characters of a given string. If the given string length is less than 2 return the original string.
+    /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-8.php
     /// </summary>
-    public static class Exercise7
+    public static class Exercise008
     {
         public static string Compute(string str)
         {
@@ -22,7 +23,10 @@ namespace CodingQuestions
 
         private static string Solution(string str)
         {
-            return str.Length > 1 ? $"{str[str.Length-1]}{str.Substring(1, str.Length-2)}{str[0]}" : str;
+            if (string.IsNullOrEmpty(str)) return "";
+
+            const int repeat = 4;
+            return str.Length > 1 ? string.Concat(Enumerable.Repeat(str.Substring(0, 2), repeat)) : str;
         }
 
         #endregion
@@ -32,10 +36,11 @@ namespace CodingQuestions
         public class Tests
         {
             [Theory]
-            [InlineData("abcd", "dbca")]
+            [InlineData("C Sharp", "C C C C ")]
+            [InlineData("JS", "JSJSJSJS")]
             [InlineData("a", "a")]
-            [InlineData("xy", "yx")]
-            [InlineData("abc", "cba")]
+            [InlineData("", "")]
+            [InlineData(null, "")]
             public void Test(string str, string expected)
             {
                 var result = Compute(str);

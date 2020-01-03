@@ -8,7 +8,7 @@ namespace CodingQuestions
     /// Check two given integers, and return true if one of them is 30 or if their sum is 30
     /// https://www.w3resource.com/csharp-exercises/basic-algo/csharp-basic-algorithm-exercises-3.php
     /// </summary>
-    public static class Exercise3
+    public static class Exercise003
     {
         public static bool Compute(int x, int y)
         {
